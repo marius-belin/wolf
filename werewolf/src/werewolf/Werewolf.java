@@ -18,7 +18,7 @@ public class Werewolf {
      * @param args the command line arguments
      */
     
-    public static List<Carte> initialisePartie(List<Joueur> lesJoueurs)
+    public static List<Carte> initialisePartie(List<Joueur> lesJoueurs, int nbJoueurs)
     {
         // Création des cartes de la partie
         List<Carte> Cartes = new ArrayList<Carte>();
@@ -50,11 +50,14 @@ public class Werewolf {
         List<Joueur> lesJoueurs;
         List<Carte> lesCartes;
         
-        nbJoueurs = Clavier.saisie_int("Saisir le nombre de joueurs");
+        while (nbJoueurs < 6 || nbJoueurs > 10)
+        {
+            nbJoueurs = Clavier.saisie_int("Saisir le nombre de joueurs");
+        }
         //on demande le nombre de joueurs et on l'envoie a la fonction qui créer la collection
         lesJoueurs = initialiseJoueurs(nbJoueurs);
         // on initialise la partie, cela attribuera les cartes
-        lesCartes = initialisePartie(lesJoueurs);
+        lesCartes = initialisePartie(lesJoueurs,nbJoueurs);
     }
     
 }
