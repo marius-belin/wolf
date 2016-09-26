@@ -15,7 +15,14 @@ public class Joueur {
     private String Nom;
     private boolean mort;
     private Carte maCarte;
-    
+
+    public Joueur(String Nom)
+    {
+        this.Nom = Nom;
+        this.maCarte = null;
+        this.mort = false;
+    }
+
     public Joueur(String Nom, Carte maCarte)
     {
         this.Nom = Nom;
